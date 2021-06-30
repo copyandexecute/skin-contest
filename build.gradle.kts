@@ -13,16 +13,22 @@ repositories {
     mavenCentral()
     maven(url = "https://papermc.io/repo/repository/maven-public/")
     maven("https://repo.codemc.io/repository/maven-snapshots/")
+    maven("https://raw.githubusercontent.com/JorelAli/CommandAPI/mvn-repo/")
+    maven("https://repo.codemc.org/repository/maven-public/")
 }
 
 val minecraft_version: String by project
 
 dependencies {
     // PaperMC Dependency
-    compileOnly("com.destroystokyo.paper", "paper-api", "$minecraft_version-R0.1-SNAPSHOT") // Only used on compile time because we have a PaperMC Server so we don't need it in the final jar
+    compileOnly("com.destroystokyo.paper",
+        "paper-api",
+        "$minecraft_version-R0.1-SNAPSHOT") // Only used on compile time because we have a PaperMC Server so we don't need it in the final jar
 
     // KSpigot dependency
     implementation("net.axay", "kspigot", "1.16.29")
+    implementation("dev.jorel:commandapi-shade:5.8")
+
 
     // You can add Dependencies here
     // For Example:
