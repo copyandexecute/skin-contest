@@ -9,6 +9,7 @@ import net.axay.kspigot.chat.KColors
 import net.axay.kspigot.event.listen
 import net.axay.kspigot.extensions.broadcast
 import net.axay.kspigot.extensions.onlinePlayers
+import org.bukkit.GameMode
 import org.bukkit.event.player.PlayerInteractEvent
 
 object AdminItemsListener {
@@ -22,6 +23,7 @@ object AdminItemsListener {
                 item.isSimilar(Config.teleportWaitingPlayers) -> {
                     onlinePlayers
                         .asSequence()
+                        .filter { it.gameMode === GameMode.ADVENTURE }
                         .filter { it.getStatus() === PlayerExtensions.Status.WAITING }
                         .take(5)
                         .forEach {
@@ -32,6 +34,7 @@ object AdminItemsListener {
                 }
                 item.isSimilar(Config.teleportNextPlayers) -> {
                     onlinePlayers
+                        .filter { it.gameMode === GameMode.ADVENTURE }
                         .filter { it.getStatus() === PlayerExtensions.Status.NEXT }
                         .forEach {
                             it.teleport(Config.waitingLoc)
