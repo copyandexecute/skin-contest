@@ -13,7 +13,9 @@ object SkinContestCommand {
                     Config.nextRoundBow,
                     Config.eliminationBow,
                     Config.teleportWaitingPlayers,
-                    Config.teleportNextPlayers)
+                    Config.teleportNextPlayers,
+                    Config.chatToggleItem
+                )
             })
             .register()
     }

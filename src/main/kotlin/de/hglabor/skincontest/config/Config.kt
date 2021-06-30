@@ -17,6 +17,7 @@ object Config {
     lateinit var catwalkLoc: Location
     const val nextRoundKey = "nextRound"
     const val eliminationKey = "eliminated"
+    var isChat = true;
     val PREFIX = "${KColors.YELLOW}[SkinContest]"
 
     val nextRoundBow = itemStack(Material.BOW) {
@@ -43,6 +44,11 @@ object Config {
     val teleportNextPlayers = itemStack(Material.YELLOW_CONCRETE) {
         meta {
             name = "${KColors.GREEN}Teleport next players to waiting room"
+        }
+    }
+    val chatToggleItem = itemStack(Material.MUSIC_DISC_11) {
+        meta {
+            name = "${KColors.GREEN}Toggle Chat"
         }
     }
 }

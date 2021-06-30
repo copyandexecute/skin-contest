@@ -41,6 +41,13 @@ object AdminItemsListener {
                             it.setStatus(PlayerExtensions.Status.WAITING)
                         }
                 }
+                item.isSimilar(Config.chatToggleItem) -> {
+                    Config.isChat = !Config.isChat
+                    when {
+                        Config.isChat -> broadcast("${KColors.GREEN}Chat wurde angeschaltet ihr ;) Mäuse :3")
+                        else -> broadcast("${KColors.RED}Chat wurde ausgeschaltet ihr frechen ;) Mäuse :3")
+                    }
+                }
             }
         }
     }
