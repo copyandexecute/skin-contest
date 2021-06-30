@@ -6,11 +6,10 @@ plugins {
     id("com.github.gmazzo.buildconfig") version "3.0.0"
 }
 
-group = "org.example"
+group = "de.hglabor"
 version = "1.0.0"
 
 repositories {
-    jcenter()
     mavenCentral()
     maven(url = "https://papermc.io/repo/repository/maven-public/")
     maven("https://repo.codemc.io/repository/maven-snapshots/")

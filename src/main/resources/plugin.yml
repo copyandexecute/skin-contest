@@ -2,5 +2,5 @@ name: ExamplePlugin
 api-version: 1.16
 authors:
   - You
-main: com.example.exampleplugin.ExamplePlugin
-version: @version@
+main: de.hglabor.skincontest.SkinContest
+version: 1.0.0
