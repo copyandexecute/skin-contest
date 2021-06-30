@@ -1,16 +1,22 @@
 package de.hglabor.skincontest.listener
 
 import net.axay.kspigot.event.listen
+import net.axay.kspigot.extensions.bukkit.feedSaturate
+import net.axay.kspigot.extensions.bukkit.saturate
 import org.bukkit.GameMode
 import org.bukkit.entity.Player
 import org.bukkit.event.entity.EntityDamageByEntityEvent
+import org.bukkit.event.entity.FoodLevelChangeEvent
 
-object DamageListener {
+object GlobalListener {
     init {
         listen<EntityDamageByEntityEvent> {
             if (it.damager is Player && (it.damager as Player).gameMode == GameMode.ADVENTURE) {
                 it.isCancelled = true;
             }
+        }
+        listen<FoodLevelChangeEvent> {
+            (it.entity as Player).feedSaturate()
         }
     }
 }

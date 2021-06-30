@@ -8,8 +8,12 @@ object SkinContestCommand {
     init {
         CommandAPICommand("skincontest")
             .withPermission("hglabor.admin")
-            .executesPlayer(PlayerCommandExecutor { player, objects ->
-                player.inventory.addItem(Config.nextRoundBow, Config.eliminationBow)
+            .executesPlayer(PlayerCommandExecutor { player, _ ->
+                player.inventory.addItem(
+                    Config.nextRoundBow,
+                    Config.eliminationBow,
+                    Config.teleportWaitingPlayers,
+                    Config.teleportNextPlayers)
             })
             .register()
     }

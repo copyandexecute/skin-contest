@@ -10,7 +10,11 @@ import net.axay.kspigot.extensions.geometry.toSimple
 object LocationCommand {
     init {
         CommandAPICommand("skinlocations")
-            .withArguments(GreedyStringArgument("which").overrideSuggestions("waiting", "next", "eliminated"))
+            .withArguments(GreedyStringArgument("which").overrideSuggestions(
+                "waiting",
+                "catwalk",
+                "next",
+                "eliminated"))
             .withPermission("hglabor.admin")
             .executesPlayer(PlayerCommandExecutor { player, objects ->
                 val locationType = objects[0] as String
@@ -18,6 +22,7 @@ object LocationCommand {
                     "waiting" -> Config.waitingLoc = player.location
                     "next" -> Config.nextLoc = player.location
                     "eliminated" -> Config.eliminatedLoc = player.location
+                    "catwalk" -> Config.catwalkLoc = player.location
                 }
                 player.sendMessage("${KColors.GREEN}Die Location $locationType wurde auf ${player.location.toSimple()} gesetzt")
             })
