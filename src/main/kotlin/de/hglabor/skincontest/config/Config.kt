@@ -6,9 +6,9 @@ import net.axay.kspigot.items.itemStack
 import net.axay.kspigot.items.meta
 import net.axay.kspigot.items.name
 import org.bukkit.Bukkit
+import org.bukkit.GameRule
 import org.bukkit.Location
 import org.bukkit.Material
-import org.bukkit.enchantments.Enchantment
 import org.bukkit.inventory.ItemFlag
 
 object Config {
@@ -20,6 +20,16 @@ object Config {
     const val eliminationKey = "eliminated"
     var isChat = true;
     val PREFIX = "${KColors.YELLOW}[SkinContest]"
+
+    init {
+        val world = Bukkit.getWorld("world")
+        world?.time = 1000
+        world?.setStorm(false)
+        world?.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false)
+        world?.setGameRule(GameRule.DO_WEATHER_CYCLE, false)
+        world?.setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false)
+        world?.setGameRule(GameRule.SPECTATORS_GENERATE_CHUNKS, false)
+    }
 
     val nextRoundBow = itemStack(Material.BOW) {
         meta {
