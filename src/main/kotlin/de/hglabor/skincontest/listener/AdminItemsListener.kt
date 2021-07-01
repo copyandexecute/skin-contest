@@ -27,7 +27,7 @@ object AdminItemsListener {
                         .filter { it.getStatus() === PlayerExtensions.Status.WAITING }
                         .take(5)
                         .forEach {
-                            broadcast("$PREFIX ${KColors.BLUE} ${it.name} ${KColors.GREEN}wurde teleportiert!")
+                            broadcast("$PREFIX${KColors.BLUE} ${it.name} ${KColors.GREEN}wurde teleportiert!")
                             it.teleport(Config.catwalkLoc)
                             it.setStatus(PlayerExtensions.Status.CATWALK)
                         }

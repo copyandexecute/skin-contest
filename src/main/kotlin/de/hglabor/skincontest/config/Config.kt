@@ -42,7 +42,7 @@ object Config {
     }
     val teleportNextPlayers = itemStack(Material.YELLOW_CONCRETE) {
         meta {
-            name = "${KColors.GREEN}Teleport next players to waiting room"
+            name = "${KColors.YELLOW}Teleport next players to waiting room"
         }
     }
     val chatToggleItem = itemStack(Material.MUSIC_DISC_11) {
