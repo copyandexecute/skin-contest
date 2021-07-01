@@ -35,13 +35,11 @@ object ProjectileListener {
                         player.setStatus(PlayerExtensions.Status.NEXT)
                         player.teleport(Config.nextLoc)
                         broadcast("${Config.PREFIX} ${KColors.BLUE} ${player.name} ${KColors.GREEN}ist in der nächsten Runde :3!")
-                        it.isCancelled = true
                     }
                     it.entity.hasMetadata(Config.eliminationKey) -> {
                         player.setStatus(PlayerExtensions.Status.ELIMINATED)
                         broadcast("${Config.PREFIX} ${KColors.BLUE} ${player.name} ${KColors.RED}ist ausgeschieden :/!")
                         player.teleport(Config.eliminatedLoc)
-                        it.isCancelled = true
                     }
                 }
             }

@@ -5,23 +5,23 @@ import net.axay.kspigot.items.flag
 import net.axay.kspigot.items.itemStack
 import net.axay.kspigot.items.meta
 import net.axay.kspigot.items.name
+import org.bukkit.Bukkit
 import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.inventory.ItemFlag
 
 object Config {
-    lateinit var waitingLoc: Location
-    lateinit var nextLoc: Location
-    lateinit var eliminatedLoc: Location
-    lateinit var catwalkLoc: Location
+    var waitingLoc: Location = Location(Bukkit.getWorld("world"), 0.22, 88.00, 37.40, 540.36F, -1.74F)
+    var nextLoc: Location = Location(Bukkit.getWorld("world"), -22.87, 88.00, -4.73, 359.72F, 1.51F)
+    var eliminatedLoc: Location = Location(Bukkit.getWorld("world"), 29.53, 88.00, -1.18, 379.34F, -0.23F)
+    var catwalkLoc: Location = Location(Bukkit.getWorld("world"), 2.54, 91.00, -11.58, 720.31F, 0.64F)
     const val nextRoundKey = "nextRound"
     const val eliminationKey = "eliminated"
     var isChat = true;
     val PREFIX = "${KColors.YELLOW}[SkinContest]"
 
     val nextRoundBow = itemStack(Material.BOW) {
-        addEnchantment(Enchantment.ARROW_DAMAGE, 5)
         meta {
             name = "${KColors.GREEN}Next Round"
             isUnbreakable = true
@@ -29,7 +29,6 @@ object Config {
         }
     }
     val eliminationBow = itemStack(Material.BOW) {
-        addEnchantment(Enchantment.ARROW_DAMAGE, 5)
         meta {
             name = "${KColors.RED}Eliminate"
             isUnbreakable = true

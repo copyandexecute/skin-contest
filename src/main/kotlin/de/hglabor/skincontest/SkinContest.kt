@@ -2,6 +2,7 @@ package de.hglabor.skincontest
 
 import de.hglabor.skincontest.command.LocationCommand
 import de.hglabor.skincontest.command.SkinContestCommand
+import de.hglabor.skincontest.config.Config
 import de.hglabor.skincontest.listener.AdminItemsListener
 import de.hglabor.skincontest.listener.ConnectionListener
 import de.hglabor.skincontest.listener.GlobalListener
@@ -22,6 +23,7 @@ class SkinContest : KSpigot() {
         LocationCommand
         SkinContestCommand
 
+        Config
         ConnectionListener
         GlobalListener
         ProjectileListener
